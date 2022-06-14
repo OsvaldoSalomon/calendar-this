@@ -8,10 +8,10 @@ validatorRequired = [DataRequired()]
 
 class AppointmentForm(FlaskForm):
     name = StringField("Name", validatorRequired)
-    start_datetime_date = DateField("Start", validatorRequired)
-    start_datetime_time = TimeField("Start", validatorRequired)
-    end_datetime_date = DateField("End", validatorRequired)
-    end_datetime_time = TimeField("End", validatorRequired)
+    start_date = DateField("Start", validatorRequired)
+    start_time = TimeField("Start", validatorRequired)
+    end_date = DateField("End", validatorRequired)
+    end_time = TimeField("End", validatorRequired)
     description = TextAreaField("Description", validatorRequired)
     private = BooleanField("Private?")
     submit = SubmitField("Create Appointment")
