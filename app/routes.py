@@ -2,6 +2,7 @@ import os
 from flask import Blueprint
 from flask import render_template
 import psycopg2
+from .forms import AppointmentForm
 
 bp = Blueprint('main', __name__, '/')
 
@@ -14,6 +15,7 @@ CONNECTION_PARAMETERS = {
 
 @bp.route('/')
 def main():
+    form = AppointmentForm()
     with psycopg2.connect(**CONNECTION_PARAMETERS) as conn:
         with conn.cursor() as curs:
             curs.execute(
@@ -24,4 +26,4 @@ def main():
                 """
             )
             rows = curs.fetchall()
-    return render_template('main.html', rows=rows)
+    return render_template('main.html', rows=rows, form=form)

@@ -6,6 +6,17 @@
 
 	<body>
 		<h1>Calendar working</h1>
+        <form method="post" action="/">
+            {{ form.csrf_token }}
+            <p>{{ form.name.label }}: {{ form.name }}</p>
+            <p>{{ form.start_datetime_date.label }}: {{ form.start_datetime_date }}</p>
+            <p>{{ form.start_datetime_time.label }}: {{ form.start_datetime_time }}</p>
+            <p>{{ form.end_datetime_date.label }}: {{ form.start_datetime_date }}</p>
+            <p>{{ form.end_datetime_time.label }}: {{ form.start_datetime_time }}</p>
+            <p>{{ form.description.label }}: {{ form.description }}</p>
+            <p>{{ form.private.label }}: {{ form.private }}</p>
+            <p>{{ form.submit }}</p>
+        </form>
 		<table>
 			<thead>
 				<tr>
